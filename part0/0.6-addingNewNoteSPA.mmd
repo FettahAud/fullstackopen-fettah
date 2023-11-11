@@ -1,0 +1,12 @@
+sequenceDiagram
+    participant Browser
+    participant Js
+    participant Server
+
+    Browser->>Js: onsubmit event
+    Js--> Js: Create note object
+    Js-->Js: Add note to notes array
+    Js-->Js: Clear form
+    Js->> Browser: Render notes
+    Js->> Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    Server-->>Js: 201 Created | message "note created"
